@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAD Solutions Consultancy — Virtual Assistant Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #10203F;
+    --navy-2: #182B52;
+    --gold: #C9A15A;
+    --gold-deep: #A9793A;
+    --cream: #F7F2E8;
+    --paper: #FDFBF6;
+    --ink: #1B1B1B;
+    --ink-soft: #4A4E58;
+    --line: #E4DCC9;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0;
+    line-height:1.05;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .script{
+    font-family:'Parisienne', cursive;
+    color:var(--gold-deep);
+    font-weight:400;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,242,232,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:74px;
+  }
+  .brand{font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; letter-spacing:0.01em; color:var(--navy);}
+  .brand span{color:var(--gold-deep);}
+  .navlinks{display:flex; gap:32px; font-size:0.95rem; font-weight:500;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .2s;}
+  .navlinks a:hover{color:var(--navy);}
+  .nav-cta{
+    background:var(--navy); color:var(--paper); padding:10px 20px; border-radius:2px;
+    text-decoration:none; font-size:0.9rem; font-weight:600;
+  }
+  .navlinks{display:none;}
+  @media(min-width:820px){ .navlinks{display:flex;} }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1fr;
+    gap:48px;
+    padding:64px 0 56px;
+    align-items:center;
+  }
+  @media(min-width:900px){
+    .hero-grid{grid-template-columns:1.05fr 0.95fr; padding:96px 0 80px;}
+  }
+  .eyebrow-script{font-family:'Parisienne',cursive; font-size:1.9rem; color:var(--gold-deep); display:block; margin-bottom:6px;}
+  .hero h1{font-size:2.6rem; letter-spacing:-0.01em;}
+  @media(min-width:900px){ .hero h1{font-size:3.4rem;} }
+  .hero p.lede{
+    margin-top:22px; max-width:46ch; color:var(--ink-soft); font-size:1.08rem; line-height:1.65;
+  }
+  .hero-ctas{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--navy); color:var(--paper); padding:14px 28px; text-decoration:none;
+    font-weight:600; font-size:0.95rem; border-radius:2px; border:1px solid var(--navy);
+    transition:background .2s;
+  }
+  .btn-primary:hover{background:var(--navy-2);}
+  .btn-ghost{
+    padding:14px 28px; text-decoration:none; font-weight:600; font-size:0.95rem;
+    color:var(--navy); border:1px solid var(--gold); border-radius:2px;
+    transition:background .2s;
+  }
+  .btn-ghost:hover{background:rgba(201,161,90,0.1);}
+
+  .hero-art{
+    position:relative;
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--navy);
+    min-height:320px;
+    display:flex; align-items:flex-end;
+    padding:28px;
+  }
+  .hero-art::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(201,161,90,0.28), transparent 45%),
+      linear-gradient(160deg, #0C1A34, #1E3767 75%);
+  }
+  .hero-art-note{
+    position:relative; z-index:1;
+    background:var(--paper);
+    padding:20px 22px;
+    max-width:280px;
+    border-radius:2px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.28);
+  }
+  .hero-art-note .script{font-size:1.35rem; display:block; line-height:1.3;}
+  .badge-ring{
+    position:absolute; top:24px; right:24px; z-index:1;
+    width:118px; height:118px; border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; color:var(--paper);
+    font-size:0.68rem; font-weight:600; letter-spacing:0.06em;
+    line-height:1.5;
+    background:rgba(16,32,63,0.4);
+  }
+
+  .pillars{
+    display:grid; grid-template-columns:repeat(2,1fr);
+    gap:1px; background:var(--line);
+    border:1px solid var(--line);
+    margin-top:44px;
+  }
+  @media(min-width:640px){ .pillars{grid-template-columns:repeat(4,1fr);} }
+  .pillar{
+    background:var(--paper); padding:20px 18px;
+    font-size:0.86rem; font-weight:600; color:var(--navy);
+  }
+  .pillar span{display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--gold-deep); margin-bottom:6px; font-weight:500;}
+
+  /* SERVICES */
+  .services{padding:88px 0;}
+  .section-head{max-width:52ch; margin-bottom:52px;}
+  .section-head .script{font-size:1.5rem; display:block; margin-bottom:8px;}
+  .section-head h2{font-size:2.1rem;}
+  .services-grid{
+    display:grid; grid-template-columns:1fr; gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  @media(min-width:700px){ .services-grid{grid-template-columns:1fr 1fr;} }
+  .service{
+    background:var(--paper); padding:34px 32px;
+  }
+  .service h3{font-size:1.15rem; margin-bottom:10px; font-weight:600;}
+  .service p{margin:0; color:var(--ink-soft); font-size:0.96rem; line-height:1.6;}
+  .service .num{
+    font-family:'Fraunces',serif; color:var(--gold); font-size:0.85rem; font-weight:600;
+    letter-spacing:0.04em; margin-bottom:14px; display:block;
+  }
+
+  /* WORKING WITH ME */
+  .process{background:var(--navy); color:var(--paper); padding:88px 0;}
+  .process h2{color:var(--paper); font-size:2.1rem;}
+  .process .script{color:var(--gold);}
+  .process-steps{
+    margin-top:48px; display:grid; grid-template-columns:1fr; gap:36px;
+  }
+  @media(min-width:760px){ .process-steps{grid-template-columns:repeat(3,1fr);} }
+  .process-step{border-top:1px solid rgba(255,255,255,0.2); padding-top:20px;}
+  .process-step .step-index{font-family:'Fraunces',serif; color:var(--gold); font-size:0.9rem; font-weight:600;}
+  .process-step h3{color:var(--paper); font-size:1.1rem; margin-top:10px; font-weight:600;}
+  .process-step p{color:rgba(253,251,246,0.72); font-size:0.94rem; line-height:1.6; margin-top:8px;}
+
+  /* PRICING */
+  .pricing{padding:88px 0;}
+  .pricing-grid{
+    margin-top:48px; display:grid; grid-template-columns:1fr; gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  @media(min-width:760px){ .pricing-grid{grid-template-columns:1fr 1fr;} }
+  .price-card{background:var(--paper); padding:40px 36px;}
+  .price-card .rate{
+    font-family:'Fraunces',serif; font-size:2.6rem; color:var(--navy); font-weight:600;
+  }
+  .price-card .rate small{font-family:'Inter',sans-serif; font-size:1rem; font-weight:500; color:var(--ink-soft);}
+  .price-card h3{font-size:1.1rem; margin-top:18px; font-weight:600;}
+  .price-card p{color:var(--ink-soft); font-size:0.95rem; line-height:1.6; margin-top:10px;}
+  .price-card.accent{background:var(--navy);}
+  .price-card.accent .rate, .price-card.accent h3{color:var(--paper);}
+  .price-card.accent p{color:rgba(253,251,246,0.75);}
+
+  /* CONTACT */
+  .contact{padding:88px 0 100px;}
+  .contact-panel{
+    background:var(--paper); border:1px solid var(--line);
+    display:grid; grid-template-columns:1fr; overflow:hidden;
+  }
+  @media(min-width:820px){ .contact-panel{grid-template-columns:1fr 1fr;} }
+  .contact-copy{padding:48px 44px;}
+  .contact-copy h2{font-size:2rem;}
+  .contact-copy p{color:var(--ink-soft); margin-top:16px; line-height:1.65; max-width:42ch;}
+  .contact-details{
+    background:var(--navy); color:var(--paper); padding:48px 44px;
+  }
+  .contact-row{
+    display:flex; gap:14px; align-items:flex-start;
+    padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.14);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .label{font-size:0.78rem; letter-spacing:0.03em; color:var(--gold); font-weight:600; margin-bottom:4px;}
+  .contact-row a{text-decoration:none; color:var(--paper); font-weight:500;}
+  .contact-row a:hover{color:var(--gold);}
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0;
+  }
+  footer .wrap{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+    font-size:0.85rem; color:var(--ink-soft);
+  }
+
+  /* subtle one-time hero reveal */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{
+      opacity:0; transform:translateY(14px);
+      animation:reveal-in .8s ease-out forwards;
+    }
+    .reveal.d1{animation-delay:.08s;}
+    .reveal.d2{animation-delay:.18s;}
+    .reveal.d3{animation-delay:.28s;}
+    @keyframes reveal-in{ to{opacity:1; transform:translateY(0);} }
+  }
+
+  :focus-visible{outline:2px solid var(--gold-deep); outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">MAD Solutions <span>Consultancy</span></div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Let's connect</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal d1">
+      <span class="eyebrow-script">Your business,</span>
+      <h1>My support,<br>your success.</h1>
+      <p class="lede">I help busy professionals and business owners stay organized, save time, and get more done — handling the details so you can focus on what matters most.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#contact">Book a free consult</a>
+        <a class="btn-ghost" href="#services">See what I do</a>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><span>01</span>Save time</div>
+        <div class="pillar"><span>02</span>Stay focused</div>
+        <div class="pillar"><span>03</span>Reliable &amp; trusted</div>
+        <div class="pillar"><span>04</span>Grow your business</div>
+      </div>
+    </div>
+    <div class="hero-art reveal d2">
+      <div class="badge-ring">RELIABLE<br>ORGANIZED<br>TRUSTED</div>
+      <div class="hero-art-note">
+        <span class="script">Organized today.<br>Successful tomorrow.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="script">Services I offer</span>
+      <h2>Consider it done.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service">
+        <span class="num">Inbox</span>
+        <h3>Inbox management</h3>
+        <p>Sorting emails, deleting spam, and drafting replies so your inbox stays clean and under control. I can also set up folders and filters, flag anything urgent, and give you a daily summary so nothing important slips through.</p>
+      </div>
+      <div class="service">
+        <span class="num">Calendar</span>
+        <h3>Calendar organization</h3>
+        <p>Scheduling meetings, setting reminders, and protecting focus time to keep your day running smoothly. I'll handle rescheduling, chase confirmations, and build in buffer time so your week never feels overbooked.</p>
+      </div>
+      <div class="service">
+        <span class="num">Travel</span>
+        <h3>Travel planning</h3>
+        <p>Booking flights, hotels, and coordinating itineraries for stress-free business or personal travel. I'll compare options against your budget, put together a clear day-by-day itinerary, and stay on hand if plans change last minute.</p>
+      </div>
+      <div class="service">
+        <span class="num">Data</span>
+        <h3>Data entry</h3>
+        <p>Updating CRM records, organizing digital files, and handling basic reports with accuracy and efficiency. From spreadsheets to cloud folders, I'll keep everything named, sorted, and easy for you to find.</p>
+      </div>
+      <div class="service">
+        <span class="num">Support</span>
+        <h3>Customer support</h3>
+        <p>Answering support tickets, live chats, and routine customer inquiries with professional and friendly care. I follow your tone of voice so customers get a consistent, on-brand experience every time.</p>
+      </div>
+      <div class="service">
+        <span class="num">Marketing</span>
+        <h3>Marketing &amp; social media</h3>
+        <p>Scheduling posts, engaging with followers, and assembling newsletters to keep your brand active and visible. I can also help plan a simple content calendar so your online presence stays consistent without eating into your week.</p>
+      </div>
+      <div class="service">
+        <span class="num">Research</span>
+        <h3>Research</h3>
+        <p>Conducting web research, gathering market insights, or compiling lead lists to support your decisions and growth. I'll pull the findings together into a clear, easy-to-read summary you can act on straight away.</p>
+      </div>
+      <div class="service">
+        <span class="num">You</span>
+        <h3>Your to-do list is my priority</h3>
+        <p>Flexible, proactive, and detail-oriented — if it's not listed here but it's admin, organization, or coordination, chances are I can help. Tell me what's weighing on your plate and let's work together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="script">How we'll work together</span>
+    <h2>Simple to start, easy to keep.</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-index">Step one</div>
+        <h3>Free consult</h3>
+        <p>We talk through what's eating your time and which tasks make sense to hand off first.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-index">Step two</div>
+        <h3>A plan that fits</h3>
+        <p>I put together a simple scope and pricing based on the support you actually need.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-index">Step three</div>
+        <h3>I take it from here</h3>
+        <p>Your inbox, calendar, and to-do list get handled — reliably, and without you having to check in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="script">Pricing</span>
+      <h2>Straightforward, no surprises.</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card accent">
+        <div class="rate">£25<small> / hour</small></div>
+        <h3>Ongoing support</h3>
+        <p>For regular, recurring help — inbox, calendar, admin, and everything in between. Billed for the hours worked, with no minimum commitment to start.</p>
+      </div>
+      <div class="price-card">
+        <div class="rate">Custom<small> quote</small></div>
+        <h3>One-off jobs</h3>
+        <p>For a single project — a research task, a travel itinerary, a data clean-up. Tell me what you need and I'll send a fixed price based on the scope of the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-panel">
+      <div class="contact-copy">
+        <span class="script">Let's connect</span>
+        <h2>Ready to hand off the details?</h2>
+        <p>I'm ready to help you simplify, stay organized, and achieve more. Reach out and let's talk about what your business needs.</p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-row">
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:madsolutionsconsultancy@gmail.com">madsolutionsconsultancy@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div>
+            <div class="label">Phone</div>
+            <a href="tel:07753425745">07753 425745</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div>
+            <div class="label">Pricing</div>
+            <span>£25/hour, or a fixed quote for one-off jobs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>MAD Solutions Consultancy — Virtual Support, Real Impact</span>
+    <span>Your success is my mission · Your time is valuable · Let me handle the rest</span>
+  </div>
+</footer>
+
+</body>
+</html>
