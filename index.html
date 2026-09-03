@@ -106,35 +106,27 @@
     border-radius:4px;
     overflow:hidden;
     background:var(--navy);
-    min-height:320px;
-    display:flex; align-items:flex-end;
-    padding:28px;
+    min-height:340px;
+    display:flex; align-items:center; justify-content:center;
+    padding:20px;
   }
   .hero-art::before{
     content:"";
     position:absolute; inset:0;
     background:
-      radial-gradient(circle at 20% 15%, rgba(201,161,90,0.28), transparent 45%),
+      radial-gradient(circle at 18% 12%, rgba(201,161,90,0.22), transparent 45%),
       linear-gradient(160deg, #0C1A34, #1E3767 75%);
   }
-  .hero-art-note{
-    position:relative; z-index:1;
-    background:var(--paper);
-    padding:20px 22px;
-    max-width:280px;
-    border-radius:2px;
-    box-shadow:0 18px 40px rgba(0,0,0,0.28);
-  }
-  .hero-art-note .script{font-size:1.35rem; display:block; line-height:1.3;}
+  .hero-illustration{position:relative; z-index:1; width:100%; max-width:400px;}
   .badge-ring{
-    position:absolute; top:24px; right:24px; z-index:1;
-    width:118px; height:118px; border-radius:50%;
+    position:absolute; top:20px; right:20px; z-index:2;
+    width:112px; height:112px; border-radius:50%;
     border:1.5px solid var(--gold);
     display:flex; align-items:center; justify-content:center;
     text-align:center; color:var(--paper);
-    font-size:0.68rem; font-weight:600; letter-spacing:0.06em;
+    font-size:0.66rem; font-weight:600; letter-spacing:0.06em;
     line-height:1.5;
-    background:rgba(16,32,63,0.4);
+    background:rgba(16,32,63,0.55);
   }
 
   .pillars{
@@ -147,8 +139,14 @@
   .pillar{
     background:var(--paper); padding:20px 18px;
     font-size:0.86rem; font-weight:600; color:var(--navy);
+    display:flex; flex-direction:column; gap:12px;
   }
-  .pillar span{display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--gold-deep); margin-bottom:6px; font-weight:500;}
+  .icon-circle{
+    width:38px; height:38px; border-radius:50%;
+    background:var(--navy); display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .icon-circle svg{width:19px; height:19px; stroke:var(--gold); fill:none;}
 
   /* SERVICES */
   .services{padding:88px 0;}
@@ -165,10 +163,8 @@
   }
   .service h3{font-size:1.15rem; margin-bottom:10px; font-weight:600;}
   .service p{margin:0; color:var(--ink-soft); font-size:0.96rem; line-height:1.6;}
-  .service .num{
-    font-family:'Fraunces',serif; color:var(--gold); font-size:0.85rem; font-weight:600;
-    letter-spacing:0.04em; margin-bottom:14px; display:block;
-  }
+  .service .icon-circle{margin-bottom:16px; width:44px; height:44px;}
+  .service .icon-circle svg{width:22px; height:22px;}
 
   /* WORKING WITH ME */
   .process{background:var(--navy); color:var(--paper); padding:88px 0;}
@@ -272,17 +268,58 @@
         <a class="btn-ghost" href="#services">See what I do</a>
       </div>
       <div class="pillars">
-        <div class="pillar"><span>01</span>Save time</div>
-        <div class="pillar"><span>02</span>Stay focused</div>
-        <div class="pillar"><span>03</span>Reliable &amp; trusted</div>
-        <div class="pillar"><span>04</span>Grow your business</div>
+        <div class="pillar">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+          Save time
+        </div>
+        <div class="pillar">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.6" fill="var(--gold)"/></svg></div>
+          Stay focused
+        </div>
+        <div class="pillar">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          Reliable &amp; trusted
+        </div>
+        <div class="pillar">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 17l5-5 3 3 7-7"/><path d="M14 8h4v4"/></svg></div>
+          Grow your business
+        </div>
       </div>
     </div>
     <div class="hero-art reveal d2">
       <div class="badge-ring">RELIABLE<br>ORGANIZED<br>TRUSTED</div>
-      <div class="hero-art-note">
-        <span class="script">Organized today.<br>Successful tomorrow.</span>
-      </div>
+      <svg class="hero-illustration" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- plant -->
+        <g transform="translate(320,40)" stroke="#8FAE8C" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M0 40 Q-14 18 -4 0"/>
+          <path d="M0 40 Q4 14 18 2"/>
+          <path d="M0 40 Q0 10 0 -6"/>
+        </g>
+        <rect x="304" y="38" width="34" height="26" rx="2" fill="#1E3767" stroke="#C9A15A" stroke-width="1.2"/>
+        <!-- mug -->
+        <g stroke="#C9A15A" stroke-width="1.6" fill="none">
+          <rect x="300" y="150" width="46" height="40" rx="6"/>
+          <path d="M346 158c12 0 12 24 0 24"/>
+          <path d="M310 150c2-8 24-8 26 0" stroke-linecap="round"/>
+        </g>
+        <!-- laptop -->
+        <g>
+          <rect x="40" y="60" width="200" height="130" rx="6" fill="#0C1A34" stroke="#C9A15A" stroke-width="1.5"/>
+          <rect x="52" y="72" width="176" height="90" rx="2" fill="#122347"/>
+          <text x="140" y="110" text-anchor="middle" fill="#C9A15A" font-family="Parisienne, cursive" font-size="20">Here to help</text>
+          <text x="140" y="134" text-anchor="middle" fill="#C9A15A" font-family="Parisienne, cursive" font-size="20">you succeed</text>
+          <path d="M20 190h240l-14 20H34z" fill="#16295A" stroke="#C9A15A" stroke-width="1" />
+        </g>
+        <!-- notebook + pen -->
+        <g>
+          <rect x="60" y="222" width="220" height="80" rx="4" fill="#FDFBF6" stroke="#C9A15A" stroke-width="1.4"/>
+          <line x1="60" y1="222" x2="60" y2="302" stroke="#C9A15A" stroke-width="3"/>
+          <text x="88" y="250" fill="#10203F" font-family="Parisienne, cursive" font-size="15">Organized today.</text>
+          <text x="88" y="272" fill="#10203F" font-family="Parisienne, cursive" font-size="15">Successful tomorrow.</text>
+          <line x1="200" y1="286" x2="256" y2="278" stroke="#10203F" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="256" cy="278" r="3" fill="#C9A15A"/>
+        </g>
+      </svg>
     </div>
   </div>
 </header>
@@ -295,42 +332,42 @@
     </div>
     <div class="services-grid">
       <div class="service">
-        <span class="num">Inbox</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6l9 7 9-7"/></svg></div>
         <h3>Inbox management</h3>
         <p>Sorting emails, deleting spam, and drafting replies so your inbox stays clean and under control. I can also set up folders and filters, flag anything urgent, and give you a daily summary so nothing important slips through.</p>
       </div>
       <div class="service">
-        <span class="num">Calendar</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg></div>
         <h3>Calendar organization</h3>
         <p>Scheduling meetings, setting reminders, and protecting focus time to keep your day running smoothly. I'll handle rescheduling, chase confirmations, and build in buffer time so your week never feels overbooked.</p>
       </div>
       <div class="service">
-        <span class="num">Travel</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><path d="M2 12l19-8-7 19-3-8-8-3z"/></svg></div>
         <h3>Travel planning</h3>
         <p>Booking flights, hotels, and coordinating itineraries for stress-free business or personal travel. I'll compare options against your budget, put together a clear day-by-day itinerary, and stay on hand if plans change last minute.</p>
       </div>
       <div class="service">
-        <span class="num">Data</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg></div>
         <h3>Data entry</h3>
         <p>Updating CRM records, organizing digital files, and handling basic reports with accuracy and efficiency. From spreadsheets to cloud folders, I'll keep everything named, sorted, and easy for you to find.</p>
       </div>
       <div class="service">
-        <span class="num">Support</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><path d="M4 12a8 8 0 0116 0v5a2 2 0 01-2 2h-1v-7h3"/><path d="M4 17v-5h3v7H5a1 1 0 01-1-1z"/></svg></div>
         <h3>Customer support</h3>
         <p>Answering support tickets, live chats, and routine customer inquiries with professional and friendly care. I follow your tone of voice so customers get a consistent, on-brand experience every time.</p>
       </div>
       <div class="service">
-        <span class="num">Marketing</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><path d="M7 11v8H4a1 1 0 01-1-1v-6a1 1 0 011-1h3z"/><path d="M7 11l4-7c1.5 0 2 1.2 2 2.4L12 10h6a2 2 0 012 2.2l-1 5A2 2 0 0117 19H9"/></svg></div>
         <h3>Marketing &amp; social media</h3>
         <p>Scheduling posts, engaging with followers, and assembling newsletters to keep your brand active and visible. I can also help plan a simple content calendar so your online presence stays consistent without eating into your week.</p>
       </div>
       <div class="service">
-        <span class="num">Research</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><circle cx="10" cy="10" r="6.5"/><path d="M19 19l-4.5-4.5"/></svg></div>
         <h3>Research</h3>
         <p>Conducting web research, gathering market insights, or compiling lead lists to support your decisions and growth. I'll pull the findings together into a clear, easy-to-read summary you can act on straight away.</p>
       </div>
       <div class="service">
-        <span class="num">You</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" stroke="var(--paper)" stroke-width="1.7" fill="none"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0112 6.5 5.4 5.4 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z"/></svg></div>
         <h3>Your to-do list is my priority</h3>
         <p>Flexible, proactive, and detail-oriented — if it's not listed here but it's admin, organization, or coordination, chances are I can help. Tell me what's weighing on your plate and let's work together.</p>
       </div>
