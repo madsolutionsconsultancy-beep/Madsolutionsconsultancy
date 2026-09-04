@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alternative Work | MAD Solutions Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Cormorant+Garamond:ital@1&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0b2039;
+    --navy-deep: #071528;
+    --gold: #c8a24a;
+    --gold-soft: #e6d4a3;
+    --cream: #faf7f0;
+    --charcoal: #2c2c2c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Montserrat', sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  .script{
+    font-family:'Parisienne', cursive;
+    color:var(--gold);
+    font-size:1.4em;
+    line-height:1;
+  }
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:20px 6vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  header .brand{
+    font-weight:800;
+    letter-spacing:0.03em;
+    font-size:1.1rem;
+  }
+  nav a{
+    margin-left:24px;
+    font-size:0.9rem;
+    font-weight:500;
+    opacity:0.85;
+  }
+  nav a:hover{opacity:1;color:var(--gold-soft);}
+  .hero{
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;
+    padding:80px 6vw 90px;
+    text-align:left;
+  }
+  .hero .eyebrow{
+    font-family:'Parisienne', cursive;
+    color:var(--gold-soft);
+    font-size:1.8rem;
+    display:block;
+    margin-bottom:6px;
+  }
+  .hero h1{
+    font-size:2.6rem;
+    font-weight:800;
+    margin:0 0 18px;
+    max-width:640px;
+  }
+  .hero p{
+    max-width:560px;
+    font-size:1.05rem;
+    opacity:0.9;
+  }
+  main{padding:70px 6vw;max-width:1000px;margin:0 auto;}
+  .lead{
+    max-width:640px;
+    font-size:1.05rem;
+    color:#3d3d3d;
+    margin-bottom:50px;
+  }
+  .offerings{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  @media (max-width:720px){
+    .offerings{grid-template-columns:1fr;}
+    .hero h1{font-size:2rem;}
+  }
+  .card{
+    background:#fff;
+    border:1px solid #e8e2d3;
+    border-top:3px solid var(--gold);
+    padding:34px 30px;
+  }
+  .card h2{
+    font-size:1.25rem;
+    font-weight:700;
+    color:var(--navy);
+    margin:0 0 6px;
+  }
+  .card .tag{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:0.95rem;
+    display:block;
+    margin-bottom:14px;
+  }
+  .card p{margin:0 0 12px;font-size:0.95rem;color:#4a4a4a;}
+  .card ul{margin:0;padding-left:18px;font-size:0.95rem;color:#4a4a4a;}
+  .card li{margin-bottom:6px;}
+  .cta-band{
+    margin-top:60px;
+    background:var(--navy);
+    color:#fff;
+    padding:44px 6vw;
+    text-align:center;
+  }
+  .cta-band h3{
+    font-weight:800;
+    font-size:1.4rem;
+    margin:0 0 8px;
+  }
+  .cta-band p{opacity:0.85;margin:0 0 20px;}
+  .btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-deep);
+    font-weight:700;
+    padding:12px 30px;
+    border-radius:2px;
+  }
+  footer{
+    text-align:center;
+    padding:30px 6vw;
+    font-size:0.85rem;
+    color:#8a8a8a;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">MAD SOLUTIONS CONSULTANCY</div>
+  <nav>
+    <a href="index.html#services">Services</a>
+    <a href="alternative-work.html">Alternative Work</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Beyond the desk</span>
+  <h1>Alternative work, offered.</h1>
+  <p>Admin and organisation are where I started — but not the whole story. Here's what else I bring to the table.</p>
+</section>
+
+<main>
+  <p class="lead">Alongside virtual assistant support, I offer two services that draw on a different set of skills — one built for businesses that need to communicate clearly, and one built for outdoor spaces that need a plan.</p>
+
+  <div class="offerings">
+    <div class="card">
+      <h2>Corporate Script Writing &amp; Training</h2>
+      <span class="tag">Say it clearly, every time</span>
+      <p>Scripts for training videos, onboarding sessions, presentations, and internal comms — written to be clear, on-brand, and easy for the person delivering them to actually use.</p>
+      <ul>
+        <li>Training video and e-learning scripts</li>
+        <li>Presentation and talk scripts</li>
+        <li>Onboarding and induction materials</li>
+        <li>Delivery support and coaching for training sessions</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Garden Design</h2>
+      <span class="tag">A space that works for you</span>
+      <p>Practical, thought-out garden design for outdoor spaces of any size — from a full layout plan to advice on planting and how the space flows.</p>
+      <ul>
+        <li>Garden layout and design plans</li>
+        <li>Planting suggestions suited to your space</li>
+        <li>Advice on making small or awkward gardens work harder</li>
+        <li>One-off consultations or full design support</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<div class="cta-band">
+  <h3>Something else on your mind?</h3>
+  <p>If it's not listed here, get in touch anyway — chances are I can help.</p>
+  <a class="btn" href="index.html#contact">Let's connect</a>
+</div>
+
+<footer>
+  MAD Solutions Consultancy — Virtual Support, Real Impact
+</footer>
+
+</body>
+</html>
